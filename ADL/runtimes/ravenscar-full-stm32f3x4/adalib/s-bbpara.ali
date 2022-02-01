@@ -1,0 +1,82 @@
+V "GNAT Lib v2021"
+A -nostdinc
+A -O2
+A -gnatA
+A --RTS=/run/media/julio/Dados/Workspace/Nucleo-STM32F334R8/bb-runtimes/runtimes/ravenscar-full-stm32f3x4/
+A -mlittle-endian
+A -mfloat-abi=hard
+A -mcpu=cortex-m4
+A -mfpu=fpv4-sp-d16
+A -mthumb
+A -gnatg
+A -fno-delete-null-pointer-checks
+A -gnatp
+A -gnatn2
+A -fcallgraph-info=su,da
+A -ffunction-sections
+A -fdata-sections
+A -march=armv7e-m+fp
+P DB ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RR NO_ELABORATION_CODE
+
+U system.bb.parameters%s  s-bbpara.ads		e8da4219 NE OL PR PK
+W system%s		system.ads		system.ali
+W system.bb%s		s-bb.ads		s-bb.ali
+W system.bb.board_parameters%s  s-bbbopa.ads	s-bbbopa.ali
+W system.bb.mcu_parameters%s  s-bbmcpa.adb	s-bbmcpa.ali
+W system.stm32%s	s-stm32.adb		s-stm32.ali
+
+D interfac.ads		20220130161218 edec285f interfaces%s
+D i-stm32.ads		20220130161218 2e97174d interfaces.stm32%s
+D system.ads		20220130161218 5ad4ef55 system%s
+D s-bb.ads		20220130161218 09e072ae system.bb%s
+D s-bbbopa.ads		20220130161218 bb036dd1 system.bb.board_parameters%s
+D s-bbmcpa.ads		20220130161218 f5f884c2 system.bb.mcu_parameters%s
+D s-bbpara.ads		20220130161218 ad47c862 system.bb.parameters%s
+D s-stm32.ads		20220130161218 028611c6 system.stm32%s
+G a e
+X 3 system.ads
+50K9*System 164e11 7|41r6 42r6 43r6 45r9 47r25 51r30 62r24 62r54 63r24 64r44
+. 65r24 66r45 155r5
+X 4 s-bb.ads
+40K16*BB 3|50k9 4|95e14 7|42r13 43r13 45r16 47r32 155r12
+X 5 s-bbbopa.ads
+37K19*Board_Parameters 54e31 7|42w16 49r34 77r28
+45N4*Main_Clock_Frequency 7|49r51
+51N4*HSE_Clock_Frequency 7|77r45
+X 6 s-bbmcpa.ads
+39K19*MCU_Parameters 47e29 7|43w16 103r18
+43N4*Number_Of_Interrupts 7|103r33
+X 7 s-bbpara.ads
+45K19*Parameters 4|40k16 7|47r35 155l15 155e25
+49N4*Clock_Frequency 51r7 53r35
+53N4*Ticks_Per_Second
+62r4*AHB_PRE{8|107R9}
+63r4*APB1_PRE{8|123R9}
+65r4*APB2_PRE{8|123R9}
+77N4*HSE_Clock
+79N4*HSI_Clock
+81b4*Has_FPU{boolean}
+84b4*Has_VTOR{boolean}
+88b4*Has_OS_Extensions{boolean}
+92b4*Is_ARMv6m{boolean}
+102I12*Interrupt_Range{integer}
+106N4*Trap_Vectors
+129N4*Context_Buffer_Capacity
+137N4*Interrupt_Stack_Size
+142N4*Interrupt_Sec_Stack_Size
+149N4*Max_Number_Of_CPUs 152r41
+152b4*Multiprocessor{boolean}
+X 8 s-stm32.ads
+33K16*STM32 7|41w13 51r37 62r31 62r61 63r31 64r51 65r31 66r52 8|212e17
+107R9*AHB_Prescaler 7|62r37 8|110e15
+117r4*AHBPRE_DIV1{107R9} 7|62r67
+120n7*DIV2{119E9} 7|64r57 66r58
+123R9*APB_Prescaler 7|63r37 65r37 8|126e15
+124b7*Enabled{boolean} 7|64m18 66m18
+125e7*Value{119E9} 7|64m35 66m36
+175I12*SYSCLK_Range{integer} 7|51r43
+
