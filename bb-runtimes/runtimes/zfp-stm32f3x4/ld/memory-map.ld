@@ -42,7 +42,6 @@ MEMORY
 }
 
 REGION_ALIAS("flash", FLASH)
-REGION_ALIAS("ccm", CCM)
 REGION_ALIAS("sram_tx", SRAM)
 REGION_ALIAS("sram_ro", SRAM)
 REGION_ALIAS("sram_bs", SRAM)

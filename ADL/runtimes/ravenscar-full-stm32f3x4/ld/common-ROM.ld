@@ -118,10 +118,6 @@ SECTIONS
    . += DEFINED (__stack_size) ? __stack_size : _DEFAULT_STACK_SIZE;
    . = ALIGN(0x8);
    __stack_end = .;
-
-   _end = .;
-   __heap_start = .;
-   __heap_end = ORIGIN(ccm_bs) + LENGTH(ccm_bs);
   } > ccm_bs
   __ccmbss_words = (__ccmbss_end - __ccmbss_start) >> 2;
 
