@@ -387,29 +387,29 @@ package body STM32.Device is
    -- Enable_Clock --
    ------------------
 
-   procedure Enable_Clock (This : aliased in out CAN_Controller)
-   is
-   begin
-      if This'Address = CAN_Base then
-         RCC_Periph.APB1ENR.CANEN := True;
-      else
-         raise Unknown_Device;
-      end if;
-   end Enable_Clock;
+   --  procedure Enable_Clock (This : aliased in out CAN_Controller)
+   --  is
+   --  begin
+   --     if This'Address = CAN_Base then
+   --        RCC_Periph.APB1ENR.CANEN := True;
+   --     else
+   --        raise Unknown_Device;
+   --     end if;
+   --  end Enable_Clock;
 
    -----------
    -- Reset --
    -----------
 
-   procedure Reset (This : aliased in out CAN_Controller) is
-   begin
-      if This'Address = STM32_SVD.CAN_Base then
-         RCC_Periph.APB1RSTR.CANRST := True;
-         RCC_Periph.APB1RSTR.CANRST := False;
-      else
-         raise Unknown_Device;
-      end if;
-   end Reset;
+   --  procedure Reset (This : aliased in out CAN_Controller) is
+   --  begin
+   --     if This'Address = STM32_SVD.CAN_Base then
+   --        RCC_Periph.APB1RSTR.CANRST := True;
+   --        RCC_Periph.APB1RSTR.CANRST := False;
+   --     else
+   --        raise Unknown_Device;
+   --     end if;
+   --  end Reset;
 
    ----------------
    -- As_Port_Id --
