@@ -242,9 +242,9 @@ library project Ada_Drivers_Library is
 
    case RTS is
       when "ravenscar-sfp" =>
-         for Source_Dirs use ada_drivers_library'Source_Dirs & ("src/sfp");
+         for Source_Dirs use Ada_Drivers_Library'Source_Dirs & ("src/sfp");
       when "ravenscar-full" =>
-         for Source_Dirs use ada_drivers_library'Source_Dirs & ("src/full");
+         for Source_Dirs use Ada_Drivers_Library'Source_Dirs & ("src/full");
    end case;
 
 end Ada_Drivers_Library;
