@@ -3,6 +3,7 @@ with STM32.GPIO;   use STM32.GPIO;
 with STM32.ADC;    use STM32.ADC;
 
 with STM_Board;    use STM_Board;
+with Inverter_PWM; use Inverter_PWM;
 
 package Inverter_ADC is
    --  Performs analog to digital conversions in a timed manner.
@@ -59,10 +60,6 @@ package Inverter_ADC is
       Pre => Is_Initialized;
    --  Get the specified ADC reading.
 
-   subtype Gain_Range is Float range 0.0 .. 1.0;
-   --  For correcting battery voltage and AC output variation.
-   Sine_Gain : Gain_Range := 0.0;
-
    function Battery_Gain
      (V_Setpoint : Battery_V_Range := Battery_V_Range'First;
       V_Actual   : Voltage := Get_Sample (V_Battery)) return Gain_Range;
@@ -94,8 +91,6 @@ private
    type Regular_Samples_Array is array (ADC_Reading'Range) of UInt16;
    for Regular_Samples_Array'Component_Size use 16;
 
-   Regular_Samples : Regular_Samples_Array := (others => 0) with Volatile;
-
    type ADC_Settings is record
       GPIO_Entry   : GPIO_Point;
       ADC_Entry    : ADC_Point;
@@ -118,9 +113,13 @@ private
    protected Sensor_Handler is
       pragma Interrupt_Priority (Sensor_ISR_Priority);
 
+      function Get_Regular_Samples return Regular_Samples_Array;
    private
 
       Rank : ADC_Reading := ADC_Reading'First;
+
+      Regular_Samples : Regular_Samples_Array := (others => 0)
+        with Volatile;
 
       Counter : Integer := 0;
       --  For testing the output.
