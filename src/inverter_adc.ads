@@ -56,8 +56,7 @@ package Inverter_ADC is
    --  Initialize the ADCs.
 
    function Get_Sample (Reading : in ADC_Reading) return Voltage
-   with
-      Pre => Is_Initialized;
+     with Pre => Is_Initialized;
    --  Get the specified ADC reading.
 
    function Battery_Gain
@@ -68,18 +67,15 @@ package Inverter_ADC is
    --  0.708 when battery voltage is maximum.
 
    function Test_V_Battery return Boolean
-   with
-      Pre => Is_Initialized;
+     with Pre => Is_Initialized;
    --  Test if battery voltage is between maximum and minimum.
 
    function Test_I_Battery return Boolean
-   with
-      Pre => Is_Initialized;
+     with Pre => Is_Initialized;
    --  Test if battery current is below maximum.
 
    function Test_V_Output return Boolean
-   with
-      Pre => Is_Initialized;
+     with Pre => Is_Initialized;
    --  Test if output voltage is between maximum and minimum.
 
    function Is_Initialized return Boolean;
@@ -88,8 +84,8 @@ private
 
    Initialized : Boolean := False;
 
-   type Regular_Samples_Array is array (ADC_Reading'Range) of UInt16;
-   for Regular_Samples_Array'Component_Size use 16;
+   type Regular_Samples_Array is array (ADC_Reading'Range) of UInt16
+     with Component_Size => 16;
 
    type ADC_Settings is record
       GPIO_Entry   : GPIO_Point;
