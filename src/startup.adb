@@ -1,4 +1,3 @@
-with STM32.Device;  use STM32.Device;
 with Ada.Real_Time; use Ada.Real_Time;
 
 with STM_Board;     use STM_Board;
@@ -35,9 +34,6 @@ package body Startup is
 
       --  Do not start while the battery voltage is outside maximum and minimum
       --  Wait_Until_V_Battery;
-
-      --  Set PWM generator (TIM1) clock source to 144 MHz
-      Select_Clock_Source (PWM_Timer, PLLCLK);
 
       --  Disable PWM gate drivers because some gate drivers enable with
       --  low level.
