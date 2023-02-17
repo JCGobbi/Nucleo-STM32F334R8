@@ -52,6 +52,7 @@ with STM32.ADC;      use STM32.ADC;
 --  with STM32.DMA;      use STM32.DMA;
 --  with STM32.USARTs;   use STM32.USARTs;
 --  with STM32.SPI;      use STM32.SPI;
+--  with STM32.SPI.DMA;  use STM32.SPI.DMA;
 --  with STM32.I2C;      use STM32.I2C;
 --  with STM32.RTC;      use STM32.RTC;
 with STM32.Timers;   use STM32.Timers;

@@ -402,7 +402,7 @@ package body STM32.Device is
 
    --  procedure Reset (This : aliased CAN_Controller) is
    --  begin
-   --     if This'Address = STM32_SVD.CAN_Base then
+   --     if This'Address = CAN_Base then
    --        RCC_Periph.APB1RSTR.CANRST := True;
    --        RCC_Periph.APB1RSTR.CANRST := False;
    --     else
@@ -474,7 +474,7 @@ package body STM32.Device is
    --                                 Source : I2C_Clock_Source)
    --  is
    --  begin
-   --     case This is
+   --     case As_Port_Id (This) is
    --        when I2C_Id_1 =>
    --           RCC_Periph.CFGR3.I2C1SW := Source = SYSCLK;
    --     end case;
@@ -487,6 +487,7 @@ package body STM32.Device is
    --  procedure Select_Clock_Source (This   : I2C_Port_Id;
    --                                 Source : I2C_Clock_Source)
    --  is
+   --     pragma Unreferenced (This);
    --  begin
    --     RCC_Periph.CFGR3.I2C1SW := Source = SYSCLK;
    --  end Select_Clock_Source;
@@ -498,7 +499,7 @@ package body STM32.Device is
    --  function Read_Clock_Source (This : I2C_Port'Class) return I2C_Clock_Source
    --  is
    --  begin
-   --     case This is
+   --     case As_Port_Id (This) is
    --        when I2C_Id_1 =>
    --           if RCC_Periph.CFGR3.I2C1SW then
    --              return SYSCLK;
@@ -514,8 +515,9 @@ package body STM32.Device is
 
    --  function Read_Clock_Source (This : I2C_Port_Id) return I2C_Clock_Source
    --  is
+   --     pragma Unreferenced (This);
    --  begin
-   --     return I2C_Clock_Source'Val (RCC_Periph.CFGR3.I2C1SW);
+   --     return (if RCC_Periph.CFGR3.I2C1SW then SYSCLK else HSI);
    --  end Read_Clock_Source;
 
    ------------------
