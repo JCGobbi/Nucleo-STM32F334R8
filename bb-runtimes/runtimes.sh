@@ -21,8 +21,7 @@ rm -r $BB_RUNTIMES_DIR/$RUNTIMES_DIR
 echo "Old runtimes directory deleted."
 
 # Add cross-compiler path. Change to your actual path.
-#export PATH=/opt/GNAT/gcc-arm-eabi/bin:$PATH
 export PATH=/opt/GNAT/gnat-arm-elf/bin:/opt/GNAT/x86_64/bin:$PATH
 
 # Run the command to generate the run-times
-$BB_RUNTIMES_DIR/build_rts.py --output=$BB_RUNTIMES_DIR/$RUNTIMES_DIR --build $TARGET --rts-src-descriptor="gnat_rts_sources/lib/gnat/rts-sources.json"
+$BB_RUNTIMES_DIR/build_rts.py --build $TARGET --rts-src-descriptor="gnat_rts_sources/lib/gnat/rts-sources.json" --output=$BB_RUNTIMES_DIR/$RUNTIMES_DIR
