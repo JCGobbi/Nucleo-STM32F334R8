@@ -1,0 +1,73 @@
+V "GNAT Lib v12"
+A -nostdinc
+A -O2
+A -gnatA
+A --RTS=/home/julio/Workspace/bb-runtimes-gnat-fsf-12/runtimes/light-tasking-stm32f3x4/
+A -mlittle-endian
+A -mfloat-abi=hard
+A -mcpu=cortex-m4
+A -mfpu=fpv4-sp-d16
+A -mthumb
+A -gnatg
+A -fno-delete-null-pointer-checks
+A -gnatp
+A -gnatn2
+A -fcallgraph-info=su,da
+A -ffunction-sections
+A -fdata-sections
+A -mlibarch=armv7e-m+fp
+A -march=armv7e-m+fp
+P DB ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U system.task_primitives%s  s-taspri.ads	9aa54f92 NE OL PR PK
+W system%s		system.ads		system.ali
+W system.os_interface%s	s-osinte.ads		s-osinte.ali
+
+D interfac.ads		20230313131951 edec285f interfaces%s
+D i-stm32.ads		20230313131951 2e97174d interfaces.stm32%s
+D system.ads		20230313131951 8fcf39fb system%s
+D s-bb.ads		20230313131951 09e072ae system.bb%s
+D s-bbbopa.ads		20230313131951 bb036dd1 system.bb.board_parameters%s
+D s-bbbosu.ads		20230313131951 0f820a2a system.bb.board_support%s
+D s-bbcppr.ads		20230313131951 c529bbcc system.bb.cpu_primitives%s
+D s-bbinte.ads		20230313131951 cf617f22 system.bb.interrupts%s
+D s-bbmcpa.ads		20230313131951 f5f884c2 system.bb.mcu_parameters%s
+D s-bbpara.ads		20230313131951 8a2bdd70 system.bb.parameters%s
+D s-bbthre.ads		20230313131951 5f49caa9 system.bb.threads%s
+D s-bbthqu.ads		20230313131951 cd23d79e system.bb.threads.queues%s
+D s-bbtime.ads		20230313131951 ad086247 system.bb.time%s
+D s-multip.ads		20230313131951 f33e0e35 system.multiprocessors%s
+D s-osinte.ads		20230313131951 229b14dd system.os_interface%s
+D s-stm32.ads		20230313131951 028611c6 system.stm32%s
+D s-stoele.ads		20230313131951 6d8e1ff4 system.storage_elements%s
+D s-taspri.ads		20230313131951 37f162b4 system.task_primitives%s
+G a e
+G c Z s s [private_dataIP system__task_primitives 57 9 none]
+X 3 system.ads
+60K9*System 174e11 18|34r6 36r9 48r28 58r29 61r24 62r18 72r21 72r39 77r5
+90M9*Address 18|48r35 72r28
+92m4*Null_Address{90M9} 18|72r46
+X 11 s-bbthre.ads
+63P9*Thread_Id(60R9)
+75R9*Thread_Descriptor
+X 15 s-osinte.ads
+51K16*OS_Interface 211e24 18|34w13 58r36 61r31 62r25
+118R12*Thread_Descriptor{11|75R9} 18|58r49
+122P12*Thread_Id{11|63P9} 18|61r44
+125p4*Null_Thread_Id{122P12} 18|62r38
+X 18 s-taspri.ads
+36K16*Task_Primitives 3|60k9 18|57E9 77l12 77e27
+39P9*Task_Body_Access
+43R9*Private_Data 57c9 75e14
+48M12*Task_Address{3|90M9}
+49N4*Task_Address_Size
+52N4*Alternate_Stack_Size
+58r7*Thread_Desc{15|118R12}
+61p7*Thread{15|122P12}
+72m7*Lwp{3|90M9}
+
