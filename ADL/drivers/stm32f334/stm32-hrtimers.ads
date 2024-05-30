@@ -84,21 +84,21 @@ package STM32.HRTimers is
       Div_32, --  fHRCK = fHRTIM
       Div_64, --  fHRCK = fHRTIM / 2
       Div_128) --  fHRCK = fHRTIM / 4
-     with Size => 8;
+     with Size => 3;
    --  The fHRCK input clock to the prescaler is equal to 32 x fHRTIM, so when
    --  the prescaler ratio is 32 (2#101#), fHRCK = fHRTIM. With fHRTIM = 144 MHz,
    --  fHRCK = 4.608 GHz with resolution 217 ps. See RM0364 rev 4 Chapter 21.3.3
    --  "Clocks".
 
    for HRTimer_Prescaler use
-     (Div_1   => 1,
-      Div_2   => 2,
-      Div_4   => 4,
-      Div_8   => 8,
-      Div_16  => 16,
-      Div_32  => 32,
-      Div_64  => 64,
-      Div_128 => 128);
+     (Div_1   => 2#000#,
+      Div_2   => 2#001#,
+      Div_4   => 2#010#,
+      Div_8   => 2#011#,
+      Div_16  => 2#100#,
+      Div_32  => 2#101#,
+      Div_64  => 2#110#,
+      Div_128 => 2#111#);
 
    procedure Configure_Prescaler
      (This        : in out HRTimer_Master;
